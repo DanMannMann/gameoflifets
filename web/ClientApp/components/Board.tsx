@@ -75,10 +75,8 @@ export class Board extends React.Component<BoardProps,BoardState> {
         this.setState({ rows: newRows });
 
         var interval: number = -1;
-        if (this.state.running) {
-            if (this.state.DELAY === 0) {
-                setImmediate(this.tick);
-            } 
+        if (this.state.running && this.state.DELAY === 0) {
+            setImmediate(this.tick);
         }
     }
 
